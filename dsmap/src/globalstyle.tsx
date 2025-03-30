@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
     color: #333;
     display: flex;
     justify-content: center;
+    height: 100vh;
   }
 
   a {
