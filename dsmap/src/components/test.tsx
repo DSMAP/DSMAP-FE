@@ -41,7 +41,7 @@ export const MainPage: React.FC = () => {
       <Header>
         <SearchContainer>
           <Searchdiv>
-            <FaBars size={25} color="#4b5563" />
+            <FaBars size={25} color="#4b5563" /> 
             <Input type="text" placeholder="노선 정보를 입력하세요" />
           </Searchdiv>
           <FaBus size={25} color="#4b5563" />
@@ -100,7 +100,7 @@ export const MainPage: React.FC = () => {
 
 const Container = styled.div`
   background-color: white;
-  height: 100vh;
+  height: 100%; 
   width: 500px;
   display: flex;
   flex-direction: column;
@@ -141,10 +141,11 @@ const Input = styled.input`
 `;
 
 const Main = styled.main`
-  padding: 20px 20px 20px 20px;
-  flex: 1;  // Main 요소가 부모 컨테이너에서 남은 공간을 모두 차지
+  padding: 20px;
   background-color: white;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 `;
 
 
@@ -155,7 +156,6 @@ const ScrollableContainer = styled.div`
   border: 1px solid #d1d5db;
   background: #DCDCF8;
   padding: 20px 20px 20px 20px; 
-  flex-grow: 1;
 `;
 
 const Expend = styled.div`
@@ -195,13 +195,17 @@ const BusNumber = styled.span<{ color: string }>`
 `;
 
 const RouteDetails = styled.div`
-  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 `;
 
 const StopInfo = styled.span`
-  font-size: 12px;  // Adjusted font size
+  font-size: 12px;
   color: #6b7280;
+  margin-top: 4px;
 `;
+
 
 const Label = styled.span<{ color: string }>`
   background: ${({ color }) => color};
@@ -218,11 +222,12 @@ const TimeText = styled.span<{ urgent?: boolean }>`
 `;
 
 const Nav = styled.nav`
-  background: #6d28d9;
+  background: #6d28d9; 
   padding: 16px;
   display: flex;
   justify-content: space-around;
   color: white;
+  margin-top: auto;
 `;
 
 const NavItem = styled.div`
