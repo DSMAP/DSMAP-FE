@@ -32,8 +32,10 @@ export const MainPage: React.FC = () => {
           <FaBell size={30} color="#FFFFFF" />
         </FaBellContainer>
       </Header>
+      <ContainerBox>
       <BusContainer />
       <BusContainer />
+      </ContainerBox>
       <Nav>
         <img src={HomeBtn} alt="Home" width={25} height={25} />
         <img src={PeopleBtn} alt="People" width={25} height={25} />
@@ -46,6 +48,7 @@ export const MainPage: React.FC = () => {
 const Container = styled.div`
   background-color: white;
   display: flex;
+  height: 100vh;
   flex-direction: column;
   overflow: hidden;
 `;
@@ -55,8 +58,16 @@ const Header = styled.header`
   margin: 20px; 
   display: flex;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
+
+const ContainerBox = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  width: 100%;
+`
 
 const SearchContainer = styled.div`
   display: flex;

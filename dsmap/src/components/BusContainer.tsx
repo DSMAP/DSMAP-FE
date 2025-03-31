@@ -17,7 +17,7 @@ const busRoutes: BusRoute[] = [
   { type: "급행", number: "급행 1", time: "13분 47초", stops: "3정거장 전", color: "red" },
   { type: "지선", number: "912", time: "13분 47초", stops: "3정거장 전", color: "green" },
   { type: "급행", number: "존시나", time: "13분 47초", stops: "3정거장 전", color: "red" },
-  { type: "일반", number: "502", time: "12분 30초", stops: "2정거장 전", color: "blue" },
+  { type: "일반", number: "50`2", time: "12분 30초", stops: "2정거장 전", color: "blue" },
   { type: "광역", number: "M6724", time: "15분 20초", stops: "4정거장 전", color: "orange" },
   { type: "마을", number: "마을 3번", time: "9분 10초", stops: "1정거장 전", color: "skyblue" },
 ];
@@ -30,7 +30,7 @@ export const BusContainer: React.FC = () => {
           <RouteContainer>
             {busRoutes.map((route, index) => (
               <RouteCard key={index}> 
-                <RouteInfo>
+                <RouteInfo>   
                   <Label color={route.color}>{route.type}</Label>
                   <BusNumber color={route.color}>{route.number}</BusNumber>
                 </RouteInfo>
@@ -49,29 +49,30 @@ export const BusContainer: React.FC = () => {
 }
 
 const Main = styled.main`
-  padding: 0px 20px 0px 20px;
-  background-color: white;   
-  overflow: hidden;
+  background-color: white;
   display: flex;
   flex-direction: column;
-`;  
-
+  overflow: hidden;
+  `;  
 
 const ScrollableContainer = styled.div`
+  width: 380px;
   height: 300px;
   overflow-y: auto;
-  border-radius: 8px; 
-  border: 1px solid #d1d5db;
+  border-radius: 10px;
   background: #DCDCF8;
-  padding: 20px;
+  padding: 20px; 
+  margin: 0px 10px 0px 10px;
 `;
+
 const Expend = styled.div`
   background-color: #DCDCF8;
-  width: 100%;
-  height: 20px;
+  width: 95.5%;
+  height: 25px;
   position: relative;
   bottom: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
+  left: 10px;
 `
 
 const RouteContainer = styled.div`
@@ -85,7 +86,7 @@ const RouteCard = styled.div`
   justify-content: space-between;
   align-items: center;
   background: white;
-  padding: 12px;  // Adjusted padding for a similar size
+  padding: 8px;  // Adjusted padding for a similar size
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
