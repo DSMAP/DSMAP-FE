@@ -9,34 +9,33 @@ import LogoImg from "../assets/logoImg.svg";
 interface BusRoute { 
   type: string;
   number: string;
-  time: string;
+  time: number;
   stops: string;
   color: string;
   urgent?: boolean;
 }
 
 const busRoutes: BusRoute[] = [
-  { type: "일반", number: "514", time: "13분 47초", stops: "3정거장 전", color: "blue" },
-  { type: "일반", number: "511", time: "13분 47초", stops: "3정거장 전", color: "blue", urgent: true },
-  { type: "마을", number: "마을 1번", time: "13분 47초", stops: "3정거장 전", color: "skyblue" },
-  { type: "급행", number: "급행 1", time: "13분 47초", stops: "3정거장 전", color: "red" },
-  { type: "지선", number: "912", time: "13분 47초", stops: "3정거장 전", color: "green" },
-  { type: "급행", number: "존시나", time: "13분 47초", stops: "3정거장 전", color: "red" },
-  { type: "일반", number: "502", time: "12분 30초", stops: "2정거장 전", color: "blue" },
-  { type: "광역", number: "M6724", time: "15분 20초", stops: "4정거장 전", color: "orange" },
-  { type: "마을", number: "마을 3번", time: "9분 10초", stops: "1정거장 전", color: "skyblue" },
+  { type: "일반", number: "514", time: 1, stops: "3정거장 전", color: "blue" },
+  { type: "일반", number: "511", time: 2, stops: "3정거장 전", color: "blue", urgent: true }, 
+  { type: "마을", number: "마을 1번", time: 3, stops: "3정거장 전", color: "skyblue" },
+  { type: "급행", number: "급행 1", time: 4, stops: "3정거장 전", color: "red" }, 
+  { type: "지선", number: "912", time: 5, stops: "3정거장 전", color: "green" },
+  { type: "급행", number: "존시나", time: 6, stops: "3정거장 전", color: "red" },
+  { type: "일반", number: "502", time: 7, stops: "2정거장 전", color: "blue" },
+  { type: "광역", number: "M6724", time: 8, stops: "4정거장 전", color: "orange" },
+  { type: "마을", number: "마을 3번", time: 10, stops: "1정거장 전", color: "skyblue" },
 ];
 
 export const MyPage: React.FC = () => {
   const [isOption, setIsOption] = useState(false);
   const [content, setContent] = useState("시간순");
   const [sortedBuses, setSortedBuses] = useState<BusRoute[]>(() => { 
-    // 로컬스토리지에서 정렬된 데이터가 있으면 가져오고, 없으면 초기 데이터를 시간순으로 정렬
     const storedData = localStorage.getItem("sortedBuses");
     if (storedData) {
       return JSON.parse(storedData);
     } else {
-      return [...busRoutes].sort((a, b) => a.time.localeCompare(b.time));
+      return [...busRoutes].sort((a, b) => a.time - b.time);
     }
   });
 
@@ -44,15 +43,14 @@ export const MyPage: React.FC = () => {
     let sortedData = [...busRoutes];
 
     if (content === "시간순") {
-      sortedData.sort((a, b) => a.time.localeCompare(b.time));
+      sortedData.sort((a, b) => a.time - b.time);
     } else if (content === "오름차순") {
       sortedData.sort((a, b) => a.number.localeCompare(b.number));
     } else if (content === "탑승순") {
       sortedData.sort((a, b) => b.number.localeCompare(a.number));
-    }
+    }  
 
     setSortedBuses(sortedData);
-    // 로컬스토리지에 새로운 정렬된 데이터 저장
     localStorage.setItem("sortedBuses", JSON.stringify(sortedData));
   }, [content]);
 
@@ -107,7 +105,7 @@ export const MyPage: React.FC = () => {
                   <BusNumber color={bus.color}>{bus.number}</BusNumber>
                 </RouteInfo>
                 <RouteDetails>
-                  <TimeText urgent={bus.urgent || false}>{bus.time}</TimeText>
+                  <TimeText urgent={bus.urgent || false}>{bus.time}분전</TimeText>
                   <StopInfo>{bus.stops}</StopInfo>
                 </RouteDetails>
               </RouteCard>
