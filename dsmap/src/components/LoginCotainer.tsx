@@ -12,8 +12,8 @@ export const LoginContainer: React.FC = () => {
           로그인
         </TitleWrapper>
         <InputWrapper>
-          <Input placeholder="아이디를 입력해주세요"/>
-          <PasswordInput placeholder="비밀번호를 입력해주세요"/>
+          <Input placeholder="아이디를 입력하세요."/>
+          <PasswordInput placeholder="비밀번호를 입력하세요."/>
         </InputWrapper>
         <ButtonWrapper>
           <LoginButton text="로그인" link=""/>
@@ -27,12 +27,11 @@ const ContainerWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px;
-  border-radius: 20px;
-  width: 75%;
+  padding: 30px;
+  border-radius: 15px;
+  width: 85%;
   gap: 50px;
   background-color: #ffffff;
-  
 `;
 
 const TitleWrapper = styled.div`

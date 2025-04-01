@@ -12,12 +12,12 @@ export const SignUpContainer: React.FC = () => {
           회원가입
         </TitleWrapper>
         <InputWrapper>
-          <Input placeholder="아이디를 입력해주세요"/>
-          <PasswordInput placeholder="비밀번호를 입력해주세요"/>
-          <PasswordInput placeholder="비밀번호를 재입력해주세요"/>
+          <Input placeholder="아이디를 입력하세요."/>
+          <PasswordInput placeholder="비밀번호를 입력하세요."/>
+          <PasswordInput placeholder="비밀번호를 재입력하세요."/>
         </InputWrapper>
         <ButtonWrapper>
-          <LoginButton text="회원가입" link=""/>
+          <LoginButton text="회원가입" link="login"/>
         </ButtonWrapper>
       </ContainerWrapper>
     </>
@@ -28,9 +28,9 @@ const ContainerWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px;
-  border-radius: 20px;
-  width: 75%;
+  padding: 30px;
+  border-radius: 15px;
+  width: 85%;
   gap: 50px;
   background-color: #ffffff;
   

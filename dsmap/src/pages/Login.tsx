@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { LoginContainer } from "../components/LoginCotainer";
 import { Logo } from "../components/Logo";
 import { GoSignUp } from "../components/ui/GoSignUp";
-
+import { ModalAlert } from "../components/ModalAlert";
 
 export const Login: React.FC = () => {
   return (
@@ -16,8 +16,8 @@ export const Login: React.FC = () => {
 }
 
 const LoginWrapper = styled.div`
-  width: 100vw;
-  height: 120vh;
+  width: 500px;
+  height: 100vh;
   background-color: #8071E1;
   display: flex;
   justify-content: center;
