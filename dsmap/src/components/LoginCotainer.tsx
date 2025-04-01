@@ -27,23 +27,23 @@ const ContainerWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px;
+  padding: 15px 35px 30px 35px;
   border-radius: 20px;
   width: 75%;
-  gap: 50px;
+  gap: 40px;
   background-color: #ffffff;
   
 `;
 
 const TitleWrapper = styled.div`
-  font-size: 35px;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: 900;
 `;
 
 const InputWrapper = styled.div`
   width: 100%;
   display: flex;
-  gap: 20px;
+  gap: 10px;
   flex-direction: column;
   justify-content: center;
 `;

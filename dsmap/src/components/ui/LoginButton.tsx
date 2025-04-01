@@ -26,11 +26,11 @@ const ButtonWrapper = styled.div`
   border-radius: 20px;
   background-color: #8071E1;
   width: 100%;
-  height: 60px;
+  height: 55px;
   color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: 500;
 `;

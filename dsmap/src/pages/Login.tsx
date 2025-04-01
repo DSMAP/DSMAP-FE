@@ -1,23 +1,25 @@
 import React from "react";
 import styled from "styled-components";
+import LoginLogo from "../assets/loginLogo.svg"
 import { LoginContainer } from "../components/LoginCotainer";
-import { Logo } from "../components/Logo";
 import { GoSignUp } from "../components/ui/GoSignUp";
 
 
 export const Login: React.FC = () => {
   return (
-    <LoginWrapper>
-      <Logo/>
-      <LoginContainer/>
-      <GoSignUp title="만약 회원이 아니라면?" linkTitle="회원가입 하기" link="signup"/>
-    </LoginWrapper>
+    <>
+        <LoginWrapper>
+          <img src={LoginLogo} width={150} height={100}></img>
+          <LoginContainer/>
+          <GoSignUp title="만약 회원이 아니라면?" linkTitle="회원가입 하기" link="signup"/>
+        </LoginWrapper>
+    </>
   );
 }
 
 const LoginWrapper = styled.div`
-  width: 100vw;
-  height: 120vh;
+  width: 465px;
+  height: 100vh;
   background-color: #8071E1;
   display: flex;
   justify-content: center;
